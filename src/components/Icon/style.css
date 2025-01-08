@@ -1,0 +1,17 @@
+.ev-icon {
+  --ev-icon-color: inherit;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  fill: currentColor;
+  font-size: inherit;
+  color: var(--ev-icon-color);
+}
+
+@each $val in primary, info, success, warning, danger {
+  .ev-icon--$(val) {
+    --ev-icon-color: var(--ev-color-$(val));
+  }
+}
