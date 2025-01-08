@@ -1,0 +1,32 @@
+.ev-collapse {
+  border-top: 1px solid var(--gray-500);
+  border-bottom: 1px solid var(--gray-500);
+}
+
+.ev-collapse-item__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+  font-size: 16px;
+  line-height: 48px;
+  background-color: var(--white);
+  color: var(--gray-700);
+  cursor: pointer;
+}
+
+.ev-collapse-item__content {
+  overflow: hidden;
+  box-sizing: border-box;
+  will-change: height;
+  padding-bottom: 25px;
+  font-size: 12px;
+  background-color: var(--white);
+  border: 1px solid var(--gray-500);
+  color: var(--gray-700);
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: height 1s ease-in-out;
+}
