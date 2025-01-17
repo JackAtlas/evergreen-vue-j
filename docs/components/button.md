@@ -11,7 +11,19 @@ description: Button 组件的文档
 
 使用 `appearance`、`intent` 来定义按钮的样式。
 
-<preview path="../demo/Button/Basic.vue" title="基础用法" description="Button 组件的基础用法"></preview>
+<preview path="../demo/Button/Basic-Button.vue" title="基础用法" description="Button 组件的基础用法"></preview>
+
+## 加载中
+
+添加/删除 `is-loading` 属性以切换加载中状态。
+
+<preview path="../demo/Button/Loading-Button.vue" title="加载中" description="Button 组件的加载中状态"></preview>
+
+## 图标
+
+通过 `icon-before` 属性添加图标，支持 fontawesome 系列图标。
+
+<preview path="../demo/Button/Icon-Button.vue" title="图标" description="Button 组件添加图标"></preview>
 
 ## API
 
@@ -29,6 +41,7 @@ description: Button 组件的文档
 | `disabled`   | `bool`                           | When true, the button is disabled. `isLoading` also sets the button to disabled.         |
 | `className`  | `string`                         | Class name passed to the button. Only use if you know what you are doing.                |
 
+<!--
 ### IconButton
 
 | PROPERTY     | TYPE                             | DESCRIPTION                                                                        |
@@ -50,3 +63,4 @@ description: Button 组件的文档
 | `icon`      | `elementType \| element` | An Evergreen icon or custom icon node. By default it uses CaretDownIcon.           |
 | `disabled`  | `bool`                   | When true, the button is disabled.                                                 |
 | `className` | `string`                 | Class name passed to the button. Only use if you know what you are doing.          |
+-->

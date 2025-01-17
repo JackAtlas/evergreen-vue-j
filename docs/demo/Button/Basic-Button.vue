@@ -6,6 +6,12 @@ import Button from '../../../src/components/Button/Button.vue'
   <Button> hello </Button>
   <Button intent="success"> Default </Button>
   <Button intent="danger"> Danger </Button>
-
-  <Button is-loading> Loading </Button>
+  <hr />
+  <Button appearance="primary"> hello </Button>
+  <Button appearance="primary" intent="success"> Default </Button>
+  <Button appearance="primary" intent="danger"> Danger </Button>
+  <hr />
+  <Button appearance="minimal"> hello </Button>
+  <Button appearance="minimal" intent="success"> Default </Button>
+  <Button appearance="minimal" intent="danger"> Danger </Button>
 </template>
