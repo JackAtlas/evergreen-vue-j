@@ -68,7 +68,7 @@
 
 <script setup lang="ts">
 import { debounce, isFunction } from 'radash'
-import { Ref, computed, reactive, ref, watch } from 'vue'
+import { type Ref, computed, reactive, ref, watch } from 'vue'
 import type { SelectEmits, SelectOption, SelectProps, SelectStates } from './types'
 import RenderVNode from '../Common/RenderVNode'
 import Icon from '../Icon/Icon.vue'
