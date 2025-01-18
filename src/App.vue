@@ -25,16 +25,16 @@ const trigger = ref<TooltipProps['trigger']>('hover')
 
 // const options: Partial<Options> = { placement: "right-end", strategy: "fixed" }
 
+const buttonRef = ref<ButtonInstance | null>(null)
+
+const tooltipRef = ref<TooltipInstance | null>(null)
 const open = () => {
   tooltipRef.value?.show()
 }
-
 const close = () => {
   tooltipRef.value?.hide()
 }
 
-const buttonRef = ref<ButtonInstance | null>(null)
-const tooltipRef = ref<TooltipInstance | null>(null)
 onMounted(() => {
   if (buttonRef.value) console.log('buttonRef', buttonRef.value.ref)
 })
@@ -52,6 +52,7 @@ onMounted(() => {
       ref="tooltipRef"
       :open-delay="1000"
       :close-delay="1000"
+      manual
     >
       <img src="https://picsum.photos/200" alt="img" />
       <template #content>Hello Tooltip</template>
