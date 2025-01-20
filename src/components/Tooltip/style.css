@@ -1,5 +1,65 @@
 .ev-tooltip {
-  display: inline-block;
+  .ev-tooltip__trigger {
+    display: inline-block;
+  }
+  .ev-tooltip__popper {
+    box-sizing: border-box;
+    z-index: 1000;
+    padding: 16px;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: justify;
+    word-break: break-all;
+    background: #fff;
+    border: 1px solid var(--gray-400);
+    border-radius: 4px;
+    box-shadow: inset hoff voff blur #000;
+
+    #arrow,
+    #arrow::before {
+      box-sizing: border-box;
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: #fff;
+    }
+    #arrow {
+      visibility: hidden;
+    }
+    #arrow::before {
+      visibility: visible;
+      content: '';
+      transform: rotate(45deg);
+    }
+    &[data-popper-placement^='top'] > #arrow {
+      bottom: -5px;
+    }
+    &[data-popper-placement^='bottom'] > #arrow {
+      top: -5px;
+    }
+    &[data-popper-placement^='left'] > #arrow {
+      right: -5px;
+    }
+    &[data-popper-placement^='right'] > #arrow {
+      left: -5px;
+    }
+    &[data-popper-placement^='top'] > #arrow::before {
+      border-right: 1px solid var(--gray-400);
+      border-bottom: 1px solid var(--gray-400);
+    }
+    &[data-popper-placement^='bottom'] > #arrow::before {
+      border-left: 1px solid var(--gray-400);
+      border-top: 1px solid var(--gray-400);
+    }
+    &[data-popper-placement^='left'] > #arrow::before {
+      border-right: 1px solid var(--gray-400);
+      border-top: 1px solid var(--gray-400);
+    }
+    &[data-popper-placement^='right'] > #arrow::before {
+      border-left: 1px solid var(--gray-400);
+      border-bottom: 1px solid var(--gray-400);
+    }
+  }
 
   .fade-enter-active,
   .fade-leave-active {
