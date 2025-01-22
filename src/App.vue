@@ -21,7 +21,7 @@ const input3 = ref('')
 const input4 = ref('')
 
 const openedValue = ref(['a'])
-const trigger = ref<TooltipProps['trigger']>('hover')
+const trigger = ref<TooltipProps['trigger']>('click')
 
 // const options: Partial<Options> = { placement: "right-end", strategy: "fixed" }
 
