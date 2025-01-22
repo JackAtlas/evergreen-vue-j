@@ -38,8 +38,8 @@ const popperContainerNode = ref<HTMLElement>()
 
 let popperInstance: Instance | null = null
 
-let events: Record<string, any> = reactive({})
-let outerEvents: Record<string, any> = reactive({})
+let events: Record<string, () => void> = reactive({})
+let outerEvents: Record<string, () => void> = reactive({})
 
 const popperOptions = computed(() => {
   return {
