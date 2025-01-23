@@ -1,5 +1,5 @@
 ---
-title: Button | Evergreen
+title: Button
 description: Button 组件的文档
 ---
 

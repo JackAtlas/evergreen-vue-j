@@ -1,5 +1,5 @@
 ---
-title: Input | Evergreen
+title: Input
 description: Input 组件的文档
 ---
 

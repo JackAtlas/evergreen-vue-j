@@ -1,5 +1,5 @@
 ---
-title: Select | Evergreen
+title: Select
 description: Select 组件的文档
 ---
 
