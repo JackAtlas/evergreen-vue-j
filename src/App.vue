@@ -9,6 +9,9 @@ import type { TooltipInstance, TooltipProps } from './components/Tooltip/types'
 import Collapse from './components/Collapse/Collapse.vue'
 import Item from './components/Collapse/CollapseItem.vue'
 
+import Dropdown from './components/Dropdown/Dropdown.vue'
+import type { MenuOption } from './components/Dropdown/types.ts'
+
 import Icon from './components/Icon/Icon.vue'
 
 import Input from './components/Input/Input.vue'
@@ -35,6 +38,13 @@ const close = () => {
   tooltipRef.value?.hide()
 }
 
+const options: MenuOption[] = [
+  { key: 1, label: 'item1' },
+  { key: 2, label: 'item2', disabled: true },
+  { key: 3, label: 'item3', divided: true },
+  { key: 4, label: 'item4' },
+]
+
 onMounted(() => {
   if (buttonRef.value) console.log('buttonRef', buttonRef.value.ref)
 })
@@ -58,6 +68,9 @@ onMounted(() => {
       <template #content>Hello Tooltip</template>
     </Tooltip>
   </header>
+  <Dropdown placement="bottom" :menu-options="options" :trigger="trigger">
+    <img src="https://picsum.photos/200" alt="img" />
+  </Dropdown>
   <Icon icon="arrow-up" size="2xl" color="green" />
   <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 16px">
     <div style="display: flex; gap: 8px">
