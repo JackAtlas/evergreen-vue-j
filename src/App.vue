@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { h, onMounted, ref } from 'vue'
 // import type { Options } from "@popperjs/core"
 
 import Button from './components/Button/Button.vue'
@@ -39,7 +39,7 @@ const close = () => {
 }
 
 const options: MenuOption[] = [
-  { key: 1, label: 'item1' },
+  { key: 1, label: h('b', 'item1') },
   { key: 2, label: 'item2', disabled: true },
   { key: 3, label: 'item3', divided: true },
   { key: 4, label: 'item4' },

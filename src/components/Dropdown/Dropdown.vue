@@ -33,7 +33,8 @@
 </template>
 
 <script setup lang="ts">
-import { Ref, ref } from 'vue'
+import { ref } from 'vue'
+import type { Ref } from 'vue'
 import type { DropdownEmits, DropdownInstance, DropdownProps, MenuOption } from './types'
 import Tooltip from '../Tooltip/Tooltip.vue'
 import RenderVNode from '../Common/RenderVNode'
