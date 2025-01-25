@@ -9,8 +9,8 @@ import type { TooltipInstance, TooltipProps } from './components/Tooltip/types'
 import Collapse from './components/Collapse/Collapse.vue'
 import Item from './components/Collapse/CollapseItem.vue'
 
-import Dropdown from './components/Dropdown/Dropdown.vue'
-import type { MenuOption } from './components/Dropdown/types.ts'
+import Dropdown from './components/Popover/Popover.vue'
+import type { MenuOption } from './components/Popover/types.ts'
 
 import Icon from './components/Icon/Icon.vue'
 
