@@ -7,14 +7,19 @@ import type { ButtonInstance } from './components/Button/types'
 import type { TooltipInstance, TooltipProps } from './components/Tooltip/types'
 
 import Collapse from './components/Collapse/Collapse.vue'
-import Item from './components/Collapse/CollapseItem.vue'
-
-import Dropdown from './components/Popover/Popover.vue'
-import type { MenuOption } from './components/Popover/types.ts'
+import CollapseItem from './components/Collapse/CollapseItem.vue'
 
 import Icon from './components/Icon/Icon.vue'
 
 import Input from './components/Input/Input.vue'
+
+import Menu from './components/Menu/Menu.vue'
+import MenuDivider from './components/Menu/MenuDivider.vue'
+import MenuGroup from './components/Menu/MenuGroup.vue'
+import MenuItem from './components/Menu/MenuItem.vue'
+
+import Popover from './components/Popover/Popover.vue'
+import type { MenuOption } from './components/Popover/types.ts'
 
 import Tooltip from './components/Tooltip/Tooltip.vue'
 
@@ -68,9 +73,9 @@ onMounted(() => {
       <template #content>Hello Tooltip</template>
     </Tooltip>
   </header>
-  <Dropdown placement="bottom" :menu-options="options" :trigger="trigger">
+  <Popover placement="bottom" :menu-options="options" :trigger="trigger">
     <img src="https://picsum.photos/200" alt="img" />
-  </Dropdown>
+  </Popover>
   <Icon icon="arrow-up" size="2xl" color="green" />
   <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 16px">
     <div style="display: flex; gap: 8px">
@@ -150,20 +155,32 @@ onMounted(() => {
     <Button icon-before="arrow-up">Continue</Button>
   </div>
   <Collapse accordion v-model="openedValue">
-    <Item name="a">
+    <CollapseItem name="a">
       <template #title>
         <h2>nice title</h2>
       </template>
       <h2>headline title</h2>
       <div>this is content a aaa</div>
-    </Item>
-    <Item name="b" title="nice title b item b">
+    </CollapseItem>
+    <CollapseItem name="b" title="nice title b item b">
       <div>this is bbbb test</div>
-    </Item>
-    <Item name="c" title="nice ccc" disabled>
+    </CollapseItem>
+    <CollapseItem name="c" title="nice ccc" disabled>
       <div>this is cccc test</div>
-    </Item>
+    </CollapseItem>
   </Collapse>
+
+  <Menu>
+    <MenuGroup title="Actions">
+      <MenuItem icon="user-group" disabled>Share</MenuItem>
+      <MenuItem icon="arrow-right-from-bracket">Move</MenuItem>
+      <MenuItem icon="pen">Rename</MenuItem>
+    </MenuGroup>
+    <MenuDivider />
+    <MenuGroup title="destructive">
+      <MenuItem icon="trash-can" intent="danger">Delete</MenuItem>
+    </MenuGroup>
+  </Menu>
 </template>
 
 <style scoped></style>

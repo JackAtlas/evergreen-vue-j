@@ -1,17 +1,13 @@
-import type { VNode } from 'vue'
+export type MenuItemIntent = 'none' | 'success' | 'danger'
 
-export interface MenuProps {
-  menuOptions: MenuOption[]
-  onItemClick?: (item: MenuOption) => void
+export interface MenuGroupProps {
+  title: string
 }
 
-export interface MenuOption {
-  label: string | VNode
-  key: string | number
+export interface MenuItemProps {
   disabled?: boolean
-  divided?: boolean
-}
-
-export interface MenuEmits {
-  (e: 'select', value: MenuOption): void
+  intent?: MenuItemIntent
+  icon?: string
+  secondaryText?: string
+  onSelect?: () => void
 }
