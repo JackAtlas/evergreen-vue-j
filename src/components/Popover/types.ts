@@ -1,7 +1,7 @@
 import type { VNode } from 'vue'
 import type { TooltipProps } from '../Tooltip/types'
 
-export interface DropdownProps extends TooltipProps {
+export interface PopoverProps extends TooltipProps {
   menuOptions: MenuOption[]
   hideAfterClick?: boolean
 }
@@ -13,12 +13,12 @@ export interface MenuOption {
   divided?: boolean
 }
 
-export interface DropdownEmits {
+export interface PopoverEmits {
   (e: 'visible-change', value: boolean): void
   (e: 'select', value: MenuOption): void
 }
 
-export interface DropdownInstance {
+export interface PopoverInstance {
   show: () => void
   hide: () => void
 }

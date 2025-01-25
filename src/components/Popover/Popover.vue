@@ -1,5 +1,5 @@
 <template>
-  <div class="ev-dropdown">
+  <div class="ev-popover">
     <Tooltip
       :trigger="trigger"
       :placement="placement"
@@ -11,16 +11,16 @@
     >
       <slot />
       <template #content>
-        <ul class="ev-dropdown__menu">
+        <ul class="ev-popover__menu">
           <template v-for="item in menuOptions" :key="item.key">
             <li v-if="item.divided" role="separator" class="divided-placeholder"></li>
             <li
-              class="ev-dropdown__item"
+              class="ev-popover__item"
               :class="{
                 'is-disabled': item.disabled,
                 'is-divided': item.divided,
               }"
-              :id="`dropdown-item-${item.key}`"
+              :id="`popover-item-${item.key}`"
               @click="() => itemClick(item)"
             >
               <RenderVNode :vNode="item.label" />
@@ -35,17 +35,17 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import type { Ref } from 'vue'
-import type { DropdownEmits, DropdownInstance, DropdownProps, MenuOption } from './types'
+import type { PopoverEmits, PopoverInstance, PopoverProps, MenuOption } from './types'
 import Tooltip from '../Tooltip/Tooltip.vue'
 import RenderVNode from '../Common/RenderVNode'
 import type { TooltipInstance } from '../Tooltip/types'
 defineOptions({
-  name: 'ev-dropdown',
+  name: 'ev-popover',
 })
-const props = withDefaults(defineProps<DropdownProps>(), {
+const props = withDefaults(defineProps<PopoverProps>(), {
   hideAfterClick: true,
 })
-const emits = defineEmits<DropdownEmits>()
+const emits = defineEmits<PopoverEmits>()
 const tooltipRef = ref() as Ref<TooltipInstance>
 const visibleChange = (e: boolean) => {
   emits('visible-change', e)
@@ -55,7 +55,7 @@ const itemClick = (e: MenuOption) => {
   emits('select', e)
   if (props.hideAfterClick) tooltipRef.value.hide()
 }
-defineExpose<DropdownInstance>({
+defineExpose<PopoverInstance>({
   show: () => tooltipRef.value?.show(),
   hide: () => tooltipRef.value?.hide(),
 })
